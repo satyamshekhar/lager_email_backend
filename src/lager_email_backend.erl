@@ -42,7 +42,7 @@
 
 init(Config) ->
     [LogLevel, From, To, Username, Passwd, Host, EmailsPerMin] = 
-        lists:map(fun (Key) -> proplists:get_value(Key) end,
+        lists:map(fun (Key) -> proplists:get_value(Key, Config) end,
                   [level, from, to, username, password, smtp_server, emails_per_min]),
 
     case lists:member(LogLevel, ?LEVELS) of
