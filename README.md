@@ -4,9 +4,10 @@ This is a backend for the Lager Erlang logging framework.
 
 [https://github.com/basho/lager](https://github.com/basho/lager)
 
-It will send all of your logging messages to the exchange you specify and use the logging level 
-as the routing key. It uses a smart connection pool to your broker. If the connection drops or h
-becomes unusable, the backend will reconnect.
+This backend will send all your logs to the configured email
+addresses. Specially useful for warning/errors logs. You can throttle
+the number of emails received per min. Setting the limit to 0, disables
+throttling.
 
 ### Usage
 
@@ -31,4 +32,3 @@ You can pass the backend the following configuration (shown are the defaults):
         ]}
       ]}
     ]}
-    
